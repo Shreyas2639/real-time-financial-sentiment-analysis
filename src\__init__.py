@@ -1,0 +1,2 @@
+"""Financial sentiment analysis package."""
+
