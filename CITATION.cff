@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated IGI Global book chapter."
+title: "Real-Time Financial Sentiment Extraction Using LLM Architectures"
+type: software
+authors:
+  - family-names: Palivela
+    given-names: Lakshmi Harika
+    orcid: "https://orcid.org/0000-0002-3373-2991"
+  - family-names: Athinarapu
+    given-names: Shreyas
+    orcid: "https://orcid.org/0009-0001-5834-4696"
+  - family-names: Basireddy
+    given-names: Greeshma Reddy
+    orcid: "https://orcid.org/0009-0006-5455-1029"
+  - family-names: Teja
+    given-names: Tata Venkata Krishna
+    orcid: "https://orcid.org/0009-0009-1087-0011"
+identifiers:
+  - type: doi
+    value: "10.4018/979-8-3693-6690-5.ch006"
+    description: "Associated IGI Global book chapter"
+repository-code: "https://github.com/Shreyas2639/real-time-financial-sentiment-analysis"
