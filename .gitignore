@@ -1,0 +1,26 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.idea/
+.vscode/
+logs/
+*.log
+
+# Generated model checkpoints
+saved_model/
+report_models/
+best_models/
+
+# Generated evaluation artifacts
+reports/
+
+# Combined research dataset: document source licences before redistribution
+data/*.csv
+!data/README.md
+
+# Local caches
+.cache/
+huggingface/
