@@ -1,8 +1,8 @@
 # Real-Time Financial Sentiment Extraction Using LLM Architectures
 
-Research implementation of a five-transformer financial sentiment system that classifies financial news as **Negative**, **Neutral**, or **Positive** and combines the model outputs through a soft-voting ensemble.
+I built this project to classify financial news as **Negative**, **Neutral**, or **Positive** using five transformer models and a soft-voting ensemble.
 
-This repository accompanies the 2026 IGI Global Scientific Publishing book chapter:
+This repository contains the implementation for our 2026 IGI Global Scientific Publishing book chapter:
 
 > Lakshmi Harika Palivela, Shreyas Athinarapu, Greeshma Reddy Basireddy, and Tata Venkata Krishna Teja. “Real-Time Financial Sentiment Extraction Using Large Language Model (LLM) Architectures.” Chapter 6 in *Harnessing Large Language Models for Enhanced Business Analytics*. DOI: [10.4018/979-8-3693-6690-5.ch006](https://doi.org/10.4018/979-8-3693-6690-5.ch006)
 
@@ -10,7 +10,7 @@ This repository accompanies the 2026 IGI Global Scientific Publishing book chapt
 
 ## Published results
 
-The following values are the results reported in Table 1 of the published chapter. Generated checkpoints and local rerun reports are intentionally not committed to this repository.
+In our published chapter, we reported the following results in Table 1. I have included these values as the official research results; generated checkpoints and local rerun reports are not committed to this repository.
 
 | Model | Accuracy | Precision | Recall | F1-score |
 |---|---:|---:|---:|---:|
@@ -21,7 +21,7 @@ The following values are the results reported in Table 1 of the published chapte
 | ELECTRA | 85.03% | 0.84 | 0.86 | 0.85 |
 | **Soft Voting Ensemble** | **90.00%** | **0.91** | **0.90** | **0.90** |
 
-Fresh training runs can vary with hardware, library versions, random initialization, and data ordering. The table above is labelled as the published result rather than a guarantee for every rerun.
+Fresh training runs can vary with hardware, library versions, random initialization, and data ordering. I have therefore clearly labelled the table above as our published results rather than a guarantee for every rerun.
 
 ## Models
 
@@ -33,7 +33,7 @@ Fresh training runs can vary with hardware, library versions, random initializat
 | DistilBERT | `distilbert-base-uncased` |
 | ELECTRA | `google/electra-small-discriminator` |
 
-Each model is fine-tuned independently. The ensemble implementation follows the published project code by averaging the five output-logit vectors before applying softmax.
+I fine-tune each model independently. The ensemble follows the approach used in our published work: it averages the five output-logit vectors before applying softmax.
 
 ## Repository structure
 
@@ -77,9 +77,9 @@ python -c "import torch; print(torch.cuda.is_available(), torch.cuda.get_device_
 
 ## Train the published five-model configuration
 
-The reproduction command uses 10 epochs, batch size 16, learning rate `2e-5`, AdamW, an 80/20 stratified split, and seed 42.
+For the published configuration, I used 10 epochs, batch size 16, learning rate `2e-5`, AdamW, an 80/20 stratified split, and seed 42.
 
-Before training, place your legally obtained combined Kaggle dataset at `data/financial_news.csv`. See `data/README.md` for the required schema. The CSV is not redistributed by this public repository until all original Kaggle sources and licences are documented.
+I assembled the research dataset by combining multiple Kaggle sources. I have not redistributed the CSV in this public repository because the original source URLs and licences must be fully documented first. To reproduce the training, place your legally obtained combined dataset at `data/financial_news.csv` and see `data/README.md` for the required schema.
 
 ```powershell
 python -m src.train_ensemble --epochs 10 --batch-size 16 --learning-rate 2e-5 --seed 42
@@ -93,7 +93,7 @@ Checkpoints are written under `report_models/`. Existing completed model directo
 python -m src.evaluate_ensemble
 ```
 
-This generates individual-model and ensemble metrics under `reports/`. These generated artifacts are ignored by Git.
+This generates individual-model and ensemble metrics under `reports/`. I keep these generated artifacts out of Git so that the repository contains the reproducible code rather than machine-specific outputs.
 
 ## Run the API
 
@@ -126,9 +126,9 @@ pytest -q
 
 ## Citation
 
-If this implementation supports academic work, cite the published chapter using the DOI above. The complete chapter PDF is not redistributed in this repository.
+If you use my implementation or build on our research, please cite the published chapter using the DOI above. I have not redistributed the complete chapter PDF in this repository.
 
 ## License
 
-No open-source license has been selected yet. Until the repository owner adds one, the source code remains under standard copyright protection.
+I have not selected an open-source license yet. Until I add one, the source code remains under standard copyright protection.
 
